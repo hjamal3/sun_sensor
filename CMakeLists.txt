@@ -16,9 +16,11 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   message_generation
   tf
+  cv_bridge
 )
 
 find_package (Eigen3 3.3 REQUIRED NO_MODULE)
+find_package(OpenCV REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -155,6 +157,7 @@ add_dependencies(sun_sensor_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EX
 target_link_libraries(sun_sensor_node
    ${catkin_LIBRARIES}
    Eigen3::Eigen
+   ${OpenCV_LIBS}
 )
 
 ## With catkin_make all packages are built within a single CMake context

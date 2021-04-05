@@ -312,7 +312,7 @@ int main(int argc, char **argv)
     ros::NodeHandle n;
 
     // get number of data items to average from parameter server
-    n.param("num_data", num_data,1000);
+    n.param("num_data", num_data,250);
 
     // camera calibration matrix
     double fx = 0, fy = 0, cx = 0, cy = 1;
